@@ -1,4 +1,6 @@
 const path = require('path');
-module.exports = {
+const config = {
     viewPath :path.join(__dirname,'/views/'),
+    port:4001,
 }
+module.exports = config;

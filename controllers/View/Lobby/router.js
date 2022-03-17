@@ -5,8 +5,7 @@ router.use(function(req,res,next){next();});
 
 {
     const path = require('path');
-    const CONFIG = require('../../config');
-    const VIEW = path.join(CONFIG.viewPath,'lobbyView.ejs');
+    const VIEW = path.join(global.CONFIG.viewPath,'lobbyView.ejs');
     router.get('/',function(req,res){
         res.render(VIEW);
     });

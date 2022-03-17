@@ -1,6 +1,4 @@
-const config = {
-    defaultURL:4000,
-}
+global.CONFIG = require('./config');
 const cors = require('cors');
 const Express = {
     express : require('express'),
@@ -23,10 +21,10 @@ const Express = {
 const app = new Express.express();
 Express.applyTo(app);
 app.use(cors());
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 let port = process.env.PORT;
 if (port == null || port == "")
-    port = config.defaultURL;
+    port = global.CONFIG.port;
 
 (async ()=>{
     require('./controllers/init')(app);
