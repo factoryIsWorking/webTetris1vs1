@@ -1,8 +1,8 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt')
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const NAME = 'User';
 
-const UserSchema = new Schema({  
+const UserSchema = new mongoose.Schema({  
     username: { // pass in config object. and put in validation rules 
       type: String,
       required: true,
@@ -43,6 +43,4 @@ UserSchema.pre('save', function(next){
       next() 
     }); 
 });
-
-const User = mongoose.model('User',UserSchema);
-module.exports = User
+export default [NAME,mongoose.model(NAME, UserSchema)];

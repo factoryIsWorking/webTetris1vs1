@@ -1,4 +1,4 @@
-import Websocket from "ws";
+const Websocket =  require("ws");
 
 function init(server){
     const wss = new Websocket.Server({ server });
@@ -12,5 +12,6 @@ function init(server){
         });
         socket.send("hello");
     });
+    console.log('webSocket service ready');
 }
-export default init;
+module.exports = init;

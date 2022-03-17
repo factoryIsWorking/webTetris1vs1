@@ -1,7 +1,7 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const NAME = 'History';
 
-const HistorySchema = new Schema({
+const HistorySchema = new mongoose.Schema({
     Date: {
         type: Date,
         default: Date.now,
@@ -28,5 +28,4 @@ const HistorySchema = new Schema({
     }
 });
 
-const History = mongoose.model('History', HistorySchema);
-module.exports = History
+export default [NAME,mongoose.model(NAME, HistorySchema)];
