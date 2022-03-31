@@ -1,4 +1,4 @@
-global.CONFIG = require('./config');
+global.CONFIG = require('../config');
 const cors = require('cors');
 const Express = {
     express : require('express'),
@@ -14,14 +14,13 @@ const Express = {
             saveUninitialized: true
         }));
         app.use(exp.static('public'));
-        app.use(exp.urlencoded({extended:true}))
-        app.use(exp.json())
+        app.use(exp.urlencoded({extended:true}));
+        app.use(exp.json());
     }
 };
 const app = new Express.express();
 Express.applyTo(app);
 app.use(cors());
-app.set('view engine', 'html');
 let port = process.env.PORT;
 if (port == null || port == "")
     port = global.CONFIG.port;

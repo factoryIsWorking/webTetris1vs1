@@ -9,7 +9,7 @@ require('./Lobby/router')(router,'/lobby');
     const path = require('path');
     const VIEW = path.join(global.CONFIG.viewPath,'login.html');
     router.get('/',function(req,res){
-        res.send(VIEW);
+        res.sendFile(VIEW);
     });
     // router.get('/script', function(req,res){
     // });
