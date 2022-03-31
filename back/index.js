@@ -1,4 +1,4 @@
-global.CONFIG = require('../config');
+global.CONFIG = require('./config');
 const cors = require('cors');
 const Express = {
     express : require('express'),
@@ -13,7 +13,7 @@ const Express = {
             resave: true,
             saveUninitialized: true
         }));
-        app.use(exp.static('public'));
+        app.use('/',exp.static(global.CONFIG.publicPath));
         app.use(exp.urlencoded({extended:true}));
         app.use(exp.json());
     }
