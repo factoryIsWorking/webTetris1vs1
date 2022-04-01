@@ -1,5 +1,5 @@
 <template>
-  <div id="LoginView">
+  <div class="LoginView">
       <SigninInput v-if="page === 0" LoginView="state"/>
       <SignupInput v-else-if="page === 1"/>
   </div>
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style>
-#LoginView{
+.LoginView{
   background-color:beige;
   width: 100%;
   height: 100%;
