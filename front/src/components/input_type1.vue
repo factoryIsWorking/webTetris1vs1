@@ -43,7 +43,10 @@ export default {
         update:function(){
             this.$emit('input',this.value);
         },
-    }
+        clear:function(){
+            this.value = "";
+        },
+    },
 }
 </script>
 

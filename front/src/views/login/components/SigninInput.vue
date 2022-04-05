@@ -40,6 +40,8 @@ export default {
   methods: {
     onSubmit :function(){
       console.log(this.id, this.pw);
+      this.id = "";
+      this.pw = "";
     },
     onToggle :function(){
       this.$emit("toggle", 1);
