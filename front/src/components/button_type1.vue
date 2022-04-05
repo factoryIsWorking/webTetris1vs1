@@ -1,16 +1,46 @@
 <template>
-    <button type='text' @click='onClick'>
+    <button type='text' 
+        :style="[{backgroundColor:backColor, color:fontPalette.base}]"
+        @click='onClick'
+        @mouseover="isHover=true"
+        @mouseleave="isHover=false">
         {{message}}
     </button>
 </template>
 
 <script>
 export default {
-    props:["message","baseClr","hoverClr"],
+    props:{
+        message:{
+            default:"click"
+        },
+        palette:{
+            default:{
+                base:'gray',
+                hover:'lightgray',
+            }
+        },
+        fontPalette:{
+            default:{
+                base:'white',
+                hover:'white',
+            }
+        }
+    },
+    data:function(){
+        return {
+            isHover:false,
+        }
+    },
+    computed:{
+        backColor:function(){
+            return this.isHover ? this.palette.hover : this.palette.base
+        }
+    },
     method:{
         onClick:function(){
             this.$emit('click');
-        }
+        },
     }
 }
 </script>
