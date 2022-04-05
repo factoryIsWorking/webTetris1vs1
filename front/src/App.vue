@@ -9,7 +9,7 @@ import LoginView from './views/login/LoginView.vue';
 
 export default {
   name: 'App',
-  data:()=>{
+  data:function(){
     return {
       page : 0,
       list : ['login', 'lobby', 'game']

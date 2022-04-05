@@ -26,7 +26,7 @@ if (port == null || port == "")
     port = global.CONFIG.port;
 
 (async ()=>{
-    require('./controllers/init')(app);
+    require('./API/init')(app);
     require('./services/DB/init')().then(_=>console.log('DB service ready'));
     const Server = await app.listen(port, null);
     require('./services/webSocket/init')(Server);
