@@ -2,8 +2,12 @@
   <div class="SigninInput">
     <div class="flexbox">
       <TitleEl :style="{margin:'10%'}"/>
-      <Input type='text' v-model="id" placeholder="ID" :style="InputStyle"/>
-      <Input type='text' v-model="pw" placeholder="Password" :style="InputStyle"/>
+      <Input type='text' v-model="id" placeholder="ID" 
+        :style="InputStyle"
+        :value="id"/>
+      <Input type='text' v-model="pw" placeholder="Password" 
+        :style="InputStyle"
+        :value="pw"/>
       <Button @click="onSubmit" message="Submit" 
       :style="[ButtonStyle]"/>
       <Button @click="onToggle" message="SignUp" 

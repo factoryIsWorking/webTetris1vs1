@@ -1,5 +1,6 @@
 <template>
-    <input type='text' v-model="value" 
+    <input type='text' 
+        v-model= 'content'
         :style="[{backgroundColor:backColor, color:fontPalette.base}]"
         @input="update"
         @focus="isFocus=true"
@@ -24,27 +25,25 @@ export default {
                 hover:'white',
                 focus:'white',
             }
-        }
+        },
     },
     data:function(){
         return {
-            value:"",
+            content:"",
             isFocus:false,
             isHover:false,
+            flag:false,
         }
     },
     computed:{
         backColor:function(){
             return this.isFocus ? this.palette.focus 
             : this.isHover ? this.palette.hover : this.palette.base
-        }
+        },
     },
     method:{
         update:function(){
-            this.$emit('input',this.value);
-        },
-        clear:function(){
-            this.value = "";
+            this.$emit('input',this.content);
         },
     },
 }
