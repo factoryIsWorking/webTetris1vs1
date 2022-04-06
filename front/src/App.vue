@@ -1,27 +1,32 @@
 <template>
   <div class="App">
-    <LoginView @onLogin="onLogin" v-if="page==0"/>
+    <LoginView v-if="page==0"/>
+    <LobbyView v-else-if="page==1"/>
+    <GameView v-else-if="page==2"/>
   </div>
 </template>
 
 <script>
 import LoginView from './views/login/LoginView.vue';
+import LobbyView from './views/lobby/LobbyView.vue';
+import GameView from './views/game/gameView.vue';
+import Store from './models/appModel';
 
 export default {
-  name: 'App',
   data:function(){
-    return {
-      page : 0,
-      list : ['login', 'lobby', 'game']
-    };
+    return {};
   },
   methods:{
-    onLogin:function(){
-      this.page = 1;
+  },
+  computed:{
+    page(){
+      return Store.state.pageInfo.page;
     }
   },
   components: {
-    LoginView
+    LoginView,
+    LobbyView,
+    GameView
   },
 }
 </script>

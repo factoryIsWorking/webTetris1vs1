@@ -20,9 +20,12 @@
 </template>
 
 <script>
-import TitleEl from '../../../components/titleEl.vue'
-import Input from '../../../components/input_type1.vue'
-import Button from '../../../components/button_type1.vue'
+import messageModel from '../../../models/messageModel';
+import Store from '../../../models/appModel';
+
+import TitleEl from '../../../components/titleEl.vue';
+import Input from '../../../components/input_type1.vue';
+import Button from '../../../components/button_type1.vue';
 
 const MARGIN = '0.7em';
 export default {
@@ -45,10 +48,15 @@ export default {
     }
   },
   methods: {
-    onSubmit :function(){
-      console.log(this.id, this.pw);
+    onSubmit : async function(){
+      let res = await messageModel.signIn(this.id, this.pw);
       this.id = "";
       this.pw = "";
+      if (res.success){
+        Store.commit('changePage',1);
+      }else{
+        alert("로그인 실패 메시지");
+      }
     },
     onToggle :function(){
       this.$emit("toggle", 1);

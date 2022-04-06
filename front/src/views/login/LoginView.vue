@@ -19,6 +19,7 @@
 <script>
 import SigninInput from './components/SigninInput.vue';
 import SignupInput from './components/SignupInput.vue';
+import messageModel from '../../models/messageModel';
 
 const FORM_LEN = '450px';
 export default {
@@ -28,7 +29,7 @@ export default {
       page : 0,
       list : ["signIn", "signUp"],
       background : {
-        'background-image': `url(${global.CONFIG.assetURL}/background/8.jpg)`
+        'background-image': `url(${messageModel.CONFIG.assetURL}/background/8.jpg)`
       },
       formSize: {
         maxHeight: FORM_LEN,
@@ -45,7 +46,7 @@ export default {
   methods:{
     togglePage:function(){
       this.page = (this.page+1)%2;
-    }
+    },
   },
 }
 </script>
