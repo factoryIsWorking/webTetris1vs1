@@ -31,6 +31,7 @@ const state={
           width: '100%',
         },
         FontStyle:{
+            fontSize: '0.9em',
             textAlign: 'center',
             fontWeight: 'bold',
             padding:'0.5em',

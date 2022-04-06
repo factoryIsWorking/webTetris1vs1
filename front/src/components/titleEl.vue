@@ -15,13 +15,19 @@ export default {}
 
 <style scoped>
 span{
-  font-size: 2.5em;
+  font-size: 3em;
+  font-weight: bold;
   margin:0.3em;
+  transition: 0.25s;
 }
 span:nth-child(2n+1){
   color: rgba(0, 172, 168, 1.0);
 }
 span:nth-child(2n){
   color: rgba(255, 0, 44, 1.0);
+}
+span:hover{
+  font-size: 4.5em;
+  color:orange;
 }
 </style>
