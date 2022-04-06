@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import messageModel from '../../../models/messageModel';
 import Store from '../../../models/appModel';
 
 import TitleEl from '../../../components/titleEl.vue';
@@ -38,10 +39,16 @@ export default {
     }
   },
   methods: {
-    onSubmit :function(){
-      console.log(this.id, this.pw);
+    onSubmit : async function(){
+      let res = await messageModel.signUp(this.id, this.pw);
       this.id = "";
       this.pw = "";
+      if (res.success){
+        alert("회원가입 성공 메시지");
+        this.$emit("toggle", 1);
+      }else{
+        alert("회원가입 실패 메시지");
+      }
     },
     onToggle :function(){
       this.$emit("toggle", 1);

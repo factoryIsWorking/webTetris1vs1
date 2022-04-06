@@ -35,5 +35,10 @@ export default {
         res = await res.json();
         return res;
     },
+    signUp: async function(id,pw){
+        let res = await fetchSet.post('user/signUp',{id,pw});
+        res = await res.json();
+        return res;
+    },
     CONFIG,
 }
