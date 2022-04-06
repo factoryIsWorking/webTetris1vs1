@@ -3,7 +3,8 @@
         v-model= 'content'
         :style="[{
             backgroundColor:backColor, 
-            color:fontColor}]"
+            color:fontColor},
+            FontStyle]"
         @input="update"
         @focus="isFocus=true"
         @blur="isFocus=false"
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import Store from '../models/appModel';
 export default {
     props:{
         palette:{
@@ -34,6 +36,7 @@ export default {
             content:"",
             isFocus:false,
             isHover:false,
+            FontStyle:Store.state.theme.FontStyle,
         }
     },
     computed:{
@@ -57,14 +60,6 @@ export default {
 <style scoped>
 ::placeholder {
   color:white;
-}
-input{
-    text-align: center;
-    font-weight: bold;
-    padding:0.5em;
-    border: 0;
-    border-radius: 3em;
-    transition: 0.25s;
 }
 input:focus{
     outline: none;

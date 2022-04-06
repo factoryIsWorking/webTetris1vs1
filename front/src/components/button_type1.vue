@@ -2,7 +2,8 @@
     <button type='text' 
         :style="[{
             backgroundColor:backColor, 
-            color:fontColor}]"
+            color:fontColor},
+            FontStyle]"
         @click='onClick'
         @mouseover="isHover=true"
         @mouseleave="isHover=false">
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import Store from '../models/appModel';
 export default {
     props:{
         message:{
@@ -32,6 +34,7 @@ export default {
     data:function(){
         return {
             isHover:false,
+            FontStyle:Store.state.theme.FontStyle,
         }
     },
     computed:{
@@ -51,12 +54,4 @@ export default {
 </script>
 
 <style scoped>
-button{
-    text-align: center;
-    font-weight: bold;
-    padding:0.5em;
-    border: 0;
-    background-color: gray;
-    border-radius: 3em;
-}
 </style>

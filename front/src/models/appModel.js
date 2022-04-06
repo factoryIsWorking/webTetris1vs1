@@ -2,7 +2,7 @@ import {createStore} from 'vuex';
 import messageModel from './messageModel';
 
 const MARGIN = '0.7em';
-const FORM_LEN = '450px';
+const FORM_LEN = '500px';
 
 const state={
     pageInfo:{
@@ -29,8 +29,15 @@ const state={
           maxWidth: FORM_LEN,
           height: '100%',
           width: '100%',
+        },
+        FontStyle:{
+            textAlign: 'center',
+            fontWeight: 'bold',
+            padding:'0.5em',
+            border: '0',
+            borderRadius: '3em',
+            transition: '0.15s'
         }
-        
     },
 };
 const store = createStore({
