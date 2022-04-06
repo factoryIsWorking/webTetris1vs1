@@ -8,10 +8,13 @@
       <Input type='text' v-model="pw" placeholder="Password" 
         :style="InputStyle"
         :value="pw"/>
-      <Button @click="onSubmit" message="Submit" 
+      <Button @click="onSubmit" message="Sign In" 
       :style="[ButtonStyle]"/>
-      <Button @click="onToggle" message="SignUp" 
-      :style="[ButtonStyle]"/>
+      <Button @click="onToggle" message="Sign Up" 
+      :style="[ButtonStyle]"
+      :palette="{base:'white',hover:'gray'}"
+      :fontPalette="{base:'gray',hover:'white'}"
+      />
     </div>
   </div>
 </template>

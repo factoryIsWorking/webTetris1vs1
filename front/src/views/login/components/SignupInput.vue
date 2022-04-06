@@ -2,12 +2,19 @@
   <div class="SignupInput">
     <div class="flexbox">
       <TitleEl :style="{margin:'10%'}"/>
-      <Input type='text' v-model="id" placeholder="ID" :style="InputStyle"/>
-      <Input type='text' v-model="pw" placeholder="Password" :style="InputStyle"/>
-      <Button @click="onSubmit" message="Submit" 
+      <Input type='text' v-model="id" placeholder="ID" 
+        :style="InputStyle"
+        :value="id"/>
+      <Input type='text' v-model="pw" placeholder="Password" 
+        :style="InputStyle"
+        :value="pw"/>
+      <Button @click="onSubmit" message="Sign Up" 
       :style="[ButtonStyle]"/>
-      <Button @click="onToggle" message="SignIn" 
-      :style="[ButtonStyle]"/>
+      <Button @click="onToggle" message="Sign In" 
+      :style="[ButtonStyle]"
+      :palette="{base:'beige',hover:'gray'}"
+      :fontPalette="{base:'gray',hover:'white'}"
+      />
     </div>
   </div>
 </template>
@@ -40,6 +47,8 @@ export default {
   methods: {
     onSubmit :function(){
       console.log(this.id, this.pw);
+      this.id = "";
+      this.pw = "";
     },
     onToggle :function(){
       this.$emit("toggle", 1);

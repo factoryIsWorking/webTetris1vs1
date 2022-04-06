@@ -1,7 +1,9 @@
 <template>
     <input type='text' 
         v-model= 'content'
-        :style="[{backgroundColor:backColor, color:fontPalette.base}]"
+        :style="[{
+            backgroundColor:backColor, 
+            color:fontColor}]"
         @input="update"
         @focus="isFocus=true"
         @blur="isFocus=false"
@@ -32,14 +34,17 @@ export default {
             content:"",
             isFocus:false,
             isHover:false,
-            flag:false,
         }
     },
     computed:{
         backColor:function(){
             return this.isFocus ? this.palette.focus 
-            : this.isHover ? this.palette.hover : this.palette.base
+            : this.isHover ? this.palette.hover : this.palette.base;
         },
+        fontColor:function(){
+            return this.isFocus ? this.fontPalette.focus 
+            : this.isHover ? this.fontPalette.hover : this.fontPalette.base;
+        }
     },
     method:{
         update:function(){

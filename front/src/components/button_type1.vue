@@ -1,6 +1,8 @@
 <template>
     <button type='text' 
-        :style="[{backgroundColor:backColor, color:fontPalette.base}]"
+        :style="[{
+            backgroundColor:backColor, 
+            color:fontColor}]"
         @click='onClick'
         @mouseover="isHover=true"
         @mouseleave="isHover=false">
@@ -35,6 +37,9 @@ export default {
     computed:{
         backColor:function(){
             return this.isHover ? this.palette.hover : this.palette.base
+        },
+        fontColor:function(){
+            return this.isHover ? this.fontPalette.hover : this.fontPalette.base
         }
     },
     method:{
