@@ -23,7 +23,6 @@ import messageModel from '../../models/messageModel';
 
 const FORM_LEN = '450px';
 export default {
-  props: {},
   data: function(){
     return {
       page : 0,

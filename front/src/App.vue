@@ -16,8 +16,6 @@ export default {
   data:function(){
     return {};
   },
-  methods:{
-  },
   computed:{
     page(){
       return Store.state.pageInfo.page;
@@ -27,6 +25,9 @@ export default {
     LoginView,
     LobbyView,
     GameView
+  },
+  mounted() {
+    //여기서 서버와 통신해서 state 설정
   },
 }
 </script>

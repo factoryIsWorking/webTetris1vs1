@@ -1,8 +1,10 @@
 module.exports = (router) => {
     router.post('/signIn', function (req, res) {
         const {id,pw} = req.body;
-        res.json({
-            success:true,
-        });
+        console.log(req.body)
+        let body = {
+            success: id == 'test' && pw == 'test' ? true : false,
+        }
+        res.json(body);
     });
 }

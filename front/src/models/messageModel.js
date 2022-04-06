@@ -11,17 +11,18 @@ const fetchSet = {
     get: async function(action){
         return fetch(   
                 CONFIG.url+action,{
-                    'method':'GET',
-                    'Content-Type' : 'application/json',
+                    method:'GET',
                 }
             );
     },
     post: async function(action,body){
         return fetch(   
                 CONFIG.url+action,{
-                    'method':'POST',
-                    'Content-Type' : 'application/json',
-                    'body': JSON.stringify(body),
+                    method:'POST',
+                    headers:{
+                        'Content-Type' : 'application/json',
+                    },
+                    body: JSON.stringify(body),
                 }
             );
     }

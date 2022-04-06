@@ -5,7 +5,7 @@
       <Input type='text' v-model="id" placeholder="ID" 
         :style="InputStyle"
         :value="id"/>
-      <Input type='text' v-model="pw" placeholder="Password" 
+      <Input type='password' v-model="pw" placeholder="Password" 
         :style="InputStyle"
         :value="pw"/>
       <Button @click="onSubmit" message="Sign In" 
