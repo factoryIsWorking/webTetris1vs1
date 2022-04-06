@@ -27,6 +27,7 @@ export default {
     GameView
   },
   mounted() {
+    console.log('start')
     //여기서 서버와 통신해서 state 설정
   },
 }

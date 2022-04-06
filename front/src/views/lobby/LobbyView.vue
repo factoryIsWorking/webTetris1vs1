@@ -5,14 +5,12 @@
 </template>
 
 <script>
-import messageModel from '../../models/messageModel';
+import Store from '../../models/appModel';
 
 export default {
   data: function(){
     return {
-      background : {
-        'background-image': `url(${messageModel.CONFIG.assetURL}/background/8.jpg)`
-      },
+      background : Store.state.theme.BackImage,
     }
   },
 }

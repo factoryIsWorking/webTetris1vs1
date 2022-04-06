@@ -5,12 +5,12 @@
       <SigninInput 
         v-if="page === 0" 
         @toggle="togglePage"
-        :style="[formSize]"
+        :style="[formStyle]"
         />
       <SignupInput 
         v-else-if="page === 1" 
         @toggle="togglePage"
-        :style="[formSize]"
+        :style="[formStyle]"
         />
     </div>
   </div>
@@ -19,23 +19,15 @@
 <script>
 import SigninInput from './components/SigninInput.vue';
 import SignupInput from './components/SignupInput.vue';
-import messageModel from '../../models/messageModel';
+import Store from '../../models/appModel';
 
-const FORM_LEN = '450px';
 export default {
   data: function(){
     return {
       page : 0,
       list : ["signIn", "signUp"],
-      background : {
-        'background-image': `url(${messageModel.CONFIG.assetURL}/background/8.jpg)`
-      },
-      formSize: {
-        maxHeight: FORM_LEN,
-        maxWidth: FORM_LEN,
-        height: '100%',
-        width: '100%',
-      }
+      background : Store.state.theme.BackImage,
+      formStyle: Store.state.theme.FormStyle,
     }
   },
   components:{

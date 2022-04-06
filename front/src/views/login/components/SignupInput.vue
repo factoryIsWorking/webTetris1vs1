@@ -9,39 +9,32 @@
         :style="InputStyle"
         :value="pw"/>
       <Button @click="onSubmit" message="Sign Up" 
-      :style="[ButtonStyle]"/>
+        :palette="{base:'gray',hover:'green'}"
+        :style="[ButtonStyle]"/>
       <Button @click="onToggle" message="Sign In" 
-      :style="[ButtonStyle]"
-      :palette="{base:'beige',hover:'gray'}"
-      :fontPalette="{base:'gray',hover:'white'}"
+        :style="[ButtonStyle]"
+        :palette="{base:'beige',hover:'gray'}"
+        :fontPalette="{base:'gray',hover:'white'}"
       />
     </div>
   </div>
 </template>
 
 <script>
-import TitleEl from '../../../components/titleEl.vue'
-import Input from '../../../components/input_type1.vue'
-import Button from '../../../components/button_type1.vue'
+import Store from '../../../models/appModel';
 
-const MARGIN = '0.7em';
+import TitleEl from '../../../components/titleEl.vue';
+import Input from '../../../components/input_type1.vue';
+import Button from '../../../components/button_type1.vue';
+
 export default {
   props: ['width','height'],
   data:function(){
     return {
       id:"",
       pw:"",
-      InputStyle:{
-        width:'60%',
-        height:'5.5%',
-        margin:MARGIN,
-      },
-      ButtonStyle:{
-        width:'20%',
-        height:'7.5%',
-        fontSize:'0.7em',
-        margin:MARGIN,
-      }
+      InputStyle:Store.state.theme.InputStyle,
+      ButtonStyle:Store.state.theme.ButtonStyle,
     }
   },
   methods: {
