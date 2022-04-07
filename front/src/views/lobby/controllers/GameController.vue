@@ -2,7 +2,7 @@
   <div
     :style="[flexCol,boxStyle,boxSize]"
   >
-    기록
+    게임콘
   </div>
 </template>
 

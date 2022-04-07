@@ -2,7 +2,7 @@
   <div
     :style="[flexCol,boxStyle,boxSize]"
   >
-    기록
+    채팅룸
   </div>
 </template>
 

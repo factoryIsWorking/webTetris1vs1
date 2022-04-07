@@ -2,7 +2,7 @@
   <div
     :style="[flexCol,boxStyle,boxSize]"
   >
-    기록
+    랭킹
   </div>
 </template>
 

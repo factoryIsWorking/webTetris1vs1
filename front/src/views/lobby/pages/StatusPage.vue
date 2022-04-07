@@ -2,7 +2,7 @@
   <div
     :style="[flexCol,boxStyle,boxSize]"
   >
-    기록
+    스테이터스
   </div>
 </template>
 

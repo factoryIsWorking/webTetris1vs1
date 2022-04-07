@@ -1,7 +1,7 @@
 <template>
   <div class="LoginView"
     :style="[background]">
-    <div class="flexbox">
+    <div :style="[FlexCol]">
       <SigninInput 
         v-if="page === 0" 
         @toggle="togglePage"
@@ -28,16 +28,17 @@ export default {
       list : ["signIn", "signUp"],
       background : Store.state.theme.BackImage,
       formStyle: Store.state.theme.FormStyle,
+      FlexCol: Store.state.theme.FlexCol,
     }
-  },
-  components:{
-    SigninInput,
-    SignupInput
   },
   methods:{
     togglePage:function(){
       this.page = (this.page+1)%2;
     },
+  },
+  components:{
+    SigninInput,
+    SignupInput
   },
 }
 </script>
@@ -46,12 +47,5 @@ export default {
 .LoginView{
   width: 100%;
   height: 100%;
-}
-.flexbox{
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 </style>
