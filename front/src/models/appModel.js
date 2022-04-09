@@ -27,7 +27,6 @@ const state = {
         LobbyPage:{
             ButtonStyle: {
                 width:'100%',
-                height: '15%',
                 fontSize: '1.5em',
                 margin: MARGIN,
             },
@@ -36,6 +35,7 @@ const state = {
                 height: '5.5%',
                 margin: MARGIN,
             },
+            gapSize : 25,
         },
         BackImage: {
             backgroundImage: `url(${messageModel.CONFIG.assetURL}/background/8.jpg)`
@@ -54,10 +54,6 @@ const state = {
             fontSize: '0.9em',
             textAlign: 'center',
             fontWeight: 'bold',
-            padding: '0.5em',
-            border: '0',
-            borderRadius: '3em',
-            transition: '0.15s'
         },
         FlexCol: {
             height: '100%',
@@ -75,6 +71,12 @@ const state = {
             flexDirection: 'row',
             alignItems: 'center',
         },
+        Radious:{
+            padding: '0.5em',
+            border: '0',
+            borderRadius: '3em',
+            transition: '0.15s'
+        }
     },
 };
 const store = createStore({

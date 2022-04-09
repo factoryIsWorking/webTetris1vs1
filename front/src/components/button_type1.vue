@@ -4,7 +4,7 @@
             backgroundColor:backColor, 
             color:fontColor},
             FontStyle]"
-        @click='onClick'
+        @click="active(value)"
         @mouseover="isHover=true"
         @mouseleave="isHover=false">
         {{message}}
@@ -18,6 +18,9 @@ export default {
         message:{
             default:"click"
         },
+        value:{
+            default:null
+        },
         palette:{
             default:{
                 base:'gray',
@@ -29,7 +32,8 @@ export default {
                 base:'white',
                 hover:'white',
             }
-        }
+        },
+        isActive:{default:true},
     },
     data:function(){
         return {
@@ -43,12 +47,12 @@ export default {
         },
         fontColor:function(){
             return this.isHover ? this.fontPalette.hover : this.fontPalette.base
-        }
-    },
-    method:{
-        onClick:function(){
-            this.$emit('click');
         },
+    },
+    methods:{
+        active(val){
+            this.$emit('active', val);
+        }
     }
 }
 </script>

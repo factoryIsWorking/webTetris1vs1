@@ -1,18 +1,18 @@
 <template>
   <div class="SignupInput">
-    <div class="flexbox">
+    <div :style="FlexCol">
       <TitleEl :style="{margin:'10%'}"/>
       <BaseInput type='text' v-model="id" placeholder="ID" 
-        :style="InputStyle"
+        :style="[InputStyle,Radious]"
         :value="id"/>
       <BaseInput type='text' v-model="pw" placeholder="Password" 
-        :style="InputStyle"
+        :style="[InputStyle,Radious]"
         :value="pw"/>
-      <BaseButton @click="onSubmit" message="Sign Up" 
+      <BaseButton @active="onSubmit" message="Sign Up" 
         :palette="{base:'gray',hover:'green'}"
-        :style="[ButtonStyle]"/>
-      <BaseButton @click="onToggle" message="Sign In" 
-        :style="[ButtonStyle]"
+        :style="[ButtonStyle,Radious]"/>
+      <BaseButton @active="onToggle" message="Sign In" 
+        :style="[ButtonStyle,Radious]"
         :palette="{base:'beige',hover:'gray'}"
         :fontPalette="{base:'gray',hover:'white'}"
       />
@@ -32,6 +32,8 @@ export default {
       pw:"",
       InputStyle:Store.state.theme.LoginPage.InputStyle,
       ButtonStyle:Store.state.theme.LoginPage.ButtonStyle,
+      FlexCol:Store.state.theme.FlexCol,
+      Radious:Store.state.theme.Radious,
     }
   },
   methods: {
@@ -57,12 +59,5 @@ export default {
 .SignupInput{
   background-color: beige;
   border-radius: 10%;
-}
-.flexbox{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 </style>

@@ -3,16 +3,16 @@
     <div :style="FlexCol">
       <TitleEl :style="{margin:'10%'}"/>
       <BaseInput type='text' v-model="id" placeholder="ID" 
-        :style="InputStyle"
+        :style="[InputStyle,Radious]"
         :value="id"/>
       <BaseInput type='password' v-model="pw" placeholder="Password" 
-        :style="InputStyle"
+        :style="[InputStyle,Radious]"
         :value="pw"/>
-      <BaseButton @click="onSubmit" message="Sign In" 
+      <BaseButton @active="onSubmit" message="Sign In" 
         :palette="{base:'gray',hover:'green'}"
-        :style="[ButtonStyle]"/>
-      <BaseButton @click="onToggle" message="Sign Up" 
-        :style="[ButtonStyle]"
+        :style="[ButtonStyle,Radious]"/>
+      <BaseButton @active="onToggle" message="Sign Up" 
+        :style="[ButtonStyle,Radious]"
         :palette="{base:'white',hover:'gray'}"
         :fontPalette="{base:'gray',hover:'white'}"
       />
@@ -33,6 +33,7 @@ export default {
       InputStyle:Store.state.theme.LoginPage.InputStyle,
       ButtonStyle:Store.state.theme.LoginPage.ButtonStyle,
       FlexCol:Store.state.theme.FlexCol,
+      Radious:Store.state.theme.Radious,
     }
   },
   methods: {

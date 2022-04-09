@@ -49,7 +49,7 @@ export default {
             : this.isHover ? this.fontPalette.hover : this.fontPalette.base;
         }
     },
-    method:{
+    methods:{
         update:function(){
             this.$emit('input',this.content);
         },

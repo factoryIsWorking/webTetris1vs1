@@ -1,8 +1,8 @@
 <template>
   <div
-    :style="[flexCol,boxStyle,boxSize]"
+    :style="[flexCol,boxStyle]"
   >
-    랭킹
+    로그아웃
   </div>
 </template>
 
