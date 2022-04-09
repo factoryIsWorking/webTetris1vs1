@@ -24,7 +24,7 @@ export default {
     return {
       FontStyle:Store.state.theme.LobbyPage.FontStyle,
       ButtonStyle:Store.state.theme.LobbyPage.ButtonStyle,
-      Radious:Store.state.theme.Radious,
+      Radious:Store.state.theme.LobbyPage.Radious,
       FlexCol : Store.state.theme.FlexCol,
       gapSize:Store.state.theme.LobbyPage.gapSize,
       selectedStyle : '5px solid white'

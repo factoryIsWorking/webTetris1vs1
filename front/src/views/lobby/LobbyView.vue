@@ -1,7 +1,13 @@
 <template>
   <div class="LobbyView"
     :style="[flexCol,background]">
-    <div :style="{width:'100%', backgroundColor:'beige'}"><TitleEl/></div>
+    <div :style="{
+        display:'flex', flexDirection:'row-reverse',width:'100%', backgroundColor:'beige',
+
+      }">
+      <div :style="{flex:1}">로그아웃 버튼 추가해야함</div>
+      <TitleEl/>
+    </div>
     <div :style="[flexRow,{flex:1, width:'100%'}]">
       <div :style="[flexRow, {
           height:`calc(100% - ${gapSize}px)`,

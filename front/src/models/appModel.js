@@ -45,6 +45,12 @@ const state = {
                 textAlign: 'center',
                 fontWeight: 'bold',
             },
+            Radious:{
+                padding: '0.5em',
+                border: '0',
+                borderRadius: '2em',
+                transition: '0.15s'
+            },
             gapSize : 25,
         },
         BackImage: {
