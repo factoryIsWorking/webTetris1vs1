@@ -23,6 +23,11 @@ const state = {
                 height: '5.5%',
                 margin: MARGIN,
             },
+            FontStyle: {
+                fontSize: '0.9em',
+                textAlign: 'center',
+                fontWeight: 'bold',
+            },
         },
         LobbyPage:{
             ButtonStyle: {
@@ -31,9 +36,14 @@ const state = {
                 margin: MARGIN,
             },
             InputStyle: {
-                width: '100%',
-                height: '5.5%',
+                width: '90%',
+                fontSize: '1.5em',
                 margin: MARGIN,
+            },
+            FontStyle: {
+                fontSize: '1.5em',
+                textAlign: 'center',
+                fontWeight: 'bold',
             },
             gapSize : 25,
         },
@@ -49,11 +59,6 @@ const state = {
         BoxStyle:{
             backgroundColor: 'white',
             borderRadius: RADIOUS,
-        },
-        FontStyle: {
-            fontSize: '0.9em',
-            textAlign: 'center',
-            fontWeight: 'bold',
         },
         FlexCol: {
             height: '100%',

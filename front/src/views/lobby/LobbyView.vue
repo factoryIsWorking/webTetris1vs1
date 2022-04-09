@@ -1,31 +1,33 @@
 <template>
   <div class="LobbyView"
-    :style="[flexRow,background]">
-    <div :style="[flexRow, {
-        height:`calc(100% - ${gapSize}px)`,
-        width:`calc(100% - ${gapSize}px)`,
-        gap:gapSize/2+'px',
-      }]">
-      <div :style="[flexRow,{height:'100%', flex : 5, justifyContent: 'center',}]">
-        <div :style="[boxSize]">
-          <GameView/>
+    :style="[flexCol,background]">
+    <div :style="{width:'100%', backgroundColor:'beige'}"><TitleEl/></div>
+    <div :style="[flexRow,{flex:1, width:'100%'}]">
+      <div :style="[flexRow, {
+          height:`calc(100% - ${gapSize}px)`,
+          width:`calc(100% - ${gapSize}px)`,
+          gap:gapSize/2+'px',
+        }]">
+        <div :style="[flexRow,{height:'100%', flex : 5, justifyContent: 'center',}]">
+          <div :style="[boxSize]">
+            <GameView/>
+          </div>
         </div>
-      </div>
-      <div :style="[flexRow,{height:'100%', flex : 5, justifyContent: 'center',}]">
-        <div :style="[boxSize]">
-          <ChatRoom v-if="page == 0"/>
-          <MatchRecord v-else-if="page == 1"/>
-          <RankPage v-else-if="page == 2"/>
-          <StatusPage v-else-if="page == 3"/>
-          <LogOut v-else-if="page == 5"/>
+        <div :style="[flexRow,{height:'100%', flex : 7, justifyContent: 'center',}]">
+          <div :style="[boxSize]">
+            <ChatRoom v-if="page == 0"/>
+            <MatchRecord v-else-if="page == 1"/>
+            <RankPage v-else-if="page == 2"/>
+            <StatusPage v-else-if="page == 3"/>
+          </div>
         </div>
-      </div>
-      <div :style="{ 
-          display: 'flex', flexDirection:'column',
-          height:'100%', flex : 2, minWidth: '100px', justifyContent: 'center'}">
-        <div :style="[conSize]">
-          <GameController :lobbyState="store" v-if="page == 4"/>
-          <LobbyController :lobbyState="store" v-else/>
+        <div :style="{ 
+            display: 'flex', flexDirection:'column',
+            height:'100%', flex : 2, minWidth: '100px', justifyContent: 'center'}">
+          <div :style="[conSize]">
+            <GameController :lobbyState="store" v-if="page == 4"/>
+            <LobbyController :lobbyState="store" v-else/>
+          </div>
         </div>
       </div>
     </div>
@@ -41,7 +43,6 @@ import ChatRoom from './pages/ChatRoom.vue'
 import MatchRecord from './pages/MatchRecord.vue'
 import RankPage from './pages/RankPage.vue'
 import StatusPage from './pages/StatusPage.vue'
-import LogOut from './pages/LogOut.vue'
 
 import LobbyController from './controllers/LobbyController.vue'
 import GameController from './controllers/GameController.vue'
@@ -51,7 +52,7 @@ const lobbyStore = createStore({
     return {
       pageInfo: {
           page: 0,
-          list: ['chat','record','rank','status','game','logout'],
+          list: ['CHAT','MATCH RECORD','RANKING','STATUS','PLAY 2P'],
       },
     }
   },
@@ -66,6 +67,7 @@ export default {
     return {
       background : Store.state.theme.BackImage,
       flexRow : Store.state.theme.FlexRow,
+      flexCol : Store.state.theme.FlexCol,
       boxSize : {
         height : '100%',
         width : '100%',
@@ -84,7 +86,7 @@ export default {
     }
   },
   components:{
-    ChatRoom,MatchRecord,RankPage,StatusPage,LobbyController,GameController,GameView,LogOut
+    ChatRoom,MatchRecord,RankPage,StatusPage,LobbyController,GameController,GameView
   },
 }
 </script>

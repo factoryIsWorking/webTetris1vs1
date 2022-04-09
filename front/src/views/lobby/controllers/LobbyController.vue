@@ -4,7 +4,7 @@
         @active="commitPage"
         :value="idx"
         :message="item"
-        :style="[ButtonStyle,Radious,{flex:1},]"
+        :style="[FontStyle,ButtonStyle,Radious,{flex:1},]"
         :palette="idx == lobbyState.state.pageInfo.page ? {base:'white',hover:'white'} : undefined"
         :fontPalette="idx == lobbyState.state.pageInfo.page ? {base:'gray',hover:'gray'} : undefined"
       />
@@ -22,6 +22,7 @@ export default {
   },
   data: function(){
     return {
+      FontStyle:Store.state.theme.LobbyPage.FontStyle,
       ButtonStyle:Store.state.theme.LobbyPage.ButtonStyle,
       Radious:Store.state.theme.Radious,
       FlexCol : Store.state.theme.FlexCol,

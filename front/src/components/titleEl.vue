@@ -26,8 +26,8 @@ span:nth-child(2n+1){
 span:nth-child(2n){
   color: rgba(255, 0, 44, 1.0);
 }
-span:hover{
+/* span:hover{
   font-size: 4.5em;
   color:orange;
-}
+} */
 </style>
