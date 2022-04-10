@@ -25,7 +25,7 @@
           :style="[
           Theme.LobbyPage.ButtonStyle,
           Theme.Radious,
-          Theme.LobbyPage.FontStyle,
+          Theme.LoginPage.FontStyle,
           {flex:1, height:'70%'}]"
           message="SEND"
           />

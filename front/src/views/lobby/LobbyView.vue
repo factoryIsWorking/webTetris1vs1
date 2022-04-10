@@ -1,6 +1,6 @@
 <template>
   <div class="LobbyView"
-    :style="[flexCol,background,{height:'90%', width:'90%'}]">
+    :style="[flexCol,background,{height:'100%', width:'100%'}]">
     <div :style="{
         display:'flex', flexDirection:'row-reverse',width:'100%', backgroundColor:'beige',
       }">

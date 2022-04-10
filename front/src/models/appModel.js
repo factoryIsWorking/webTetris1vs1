@@ -42,7 +42,7 @@ const state = {
             },
             FontStyle: {
                 fontSize: '1.5em',
-                textAlign: 'center',
+                textAlign: 'left',
                 fontWeight: 'bold',
             },
             Radious:{

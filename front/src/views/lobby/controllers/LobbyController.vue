@@ -22,7 +22,7 @@ export default {
   },
   data: function(){
     return {
-      FontStyle:Store.state.theme.LobbyPage.FontStyle,
+      FontStyle:Store.state.theme.LoginPage.FontStyle,
       ButtonStyle:Store.state.theme.LobbyPage.ButtonStyle,
       Radious:Store.state.theme.LobbyPage.Radious,
       FlexCol : Store.state.theme.FlexCol,

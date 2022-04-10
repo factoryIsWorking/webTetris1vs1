@@ -1,25 +1,42 @@
 <template>
     <div :style="{width:'100%',overflowY: 'hidden',overflowX: 'hidden'}">
-        <div :style="{width:W+'px', overflow:'hidden', fontSize:'100px'}">12345123451234512345</div>
+        <div :style="[{height:Size[1]+'px', width:Size[0]+'px'}, {overflowY: 'auto',overflowX: 'hidden'}]">
+            <div>12341234311254513451324</div>
+            <div>12341234311254513451324</div>
+            <div>12341234311254513451324</div>
+            <div>12341234311254513451324</div>
+            <div>12341234311254513451324</div>
+            <div>12341234311254513451324</div>
+        </div>
     </div>
 </template>
 
 <script>
+import addWindowEvent from '../models/windowModel';
 export default {
     data:function(){
         return {
             message: this.innerHTML,
-            element: {clientWidth:0},
+            refreshFlag:false,
         }
     },
+    methods:{
+        upFlag(){
+            this.refreshFlag = true;
+        },
+    },
     computed:{
-        W(){
-            console.log(this.element.clientWidth)
-            return this.element.clientWidth;
+        Size(){
+            if (this.refreshFlag == true)
+                this.refreshFlag == false;
+            return this.$el ? [this.$el.clientWidth, this.$el.clientHeight] : [0,0];
         }
     },
     mounted() {
-        this.element = this.$el;
+        this.upFlag();
+        for (let type of ['keyup','fullscreenchange','resize']){
+            addWindowEvent(type, this.upFlag);
+        }
     },
 }
 </script>
