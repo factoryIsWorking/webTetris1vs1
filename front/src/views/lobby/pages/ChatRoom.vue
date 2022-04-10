@@ -3,10 +3,12 @@
     <div :style="[Theme.FlexCol,{
           height:`calc(100% - ${Theme.LobbyPage.gapSize}px)`,
           width:`calc(100% - ${Theme.LobbyPage.gapSize}px)`,
+          gap:Theme.LobbyPage.gapSize/2+'px',
         }]">
-      <div :style="[Theme.BoxStyle,
-        {backgroundColor:'lightGray',width:'100%', flex:1}]">
-      </div>
+      <BaseScroll :style="[Theme.BoxStyle,
+        {backgroundColor:'lightGray',flex:1}]"/>
+      <BaseScroll :style="[Theme.BoxStyle,
+        {backgroundColor:'lightGray',flex:1}]"/>
       <div
         :style="[
         Theme.FlexRow,
@@ -40,7 +42,7 @@ export default {
     return {
       Theme : Store.state.theme,
     }
-  },
+  }
 }
 </script>
 

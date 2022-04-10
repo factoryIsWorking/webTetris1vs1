@@ -1,9 +1,8 @@
 <template>
   <div class="LobbyView"
-    :style="[flexCol,background]">
+    :style="[flexCol,background,{height:'90%', width:'90%'}]">
     <div :style="{
         display:'flex', flexDirection:'row-reverse',width:'100%', backgroundColor:'beige',
-
       }">
       <div :style="{flex:1}">로그아웃 버튼 추가해야함</div>
       <TitleEl/>
@@ -20,7 +19,7 @@
           </div>
         </div>
         <div :style="[flexRow,{height:'100%', flex : 7, justifyContent: 'center',}]">
-          <div :style="[boxSize]">
+          <div :style="[boxSize, {width:'100%'}]">
             <ChatRoom v-if="page == 0"/>
             <MatchRecord v-else-if="page == 1"/>
             <RankPage v-else-if="page == 2"/>
@@ -98,8 +97,4 @@ export default {
 </script>
 
 <style scoped>
-.LobbyView{
-  width: 100%;
-  height: 100%;
-}
 </style>
