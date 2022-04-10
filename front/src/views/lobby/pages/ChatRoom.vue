@@ -5,9 +5,9 @@
           width:`calc(100% - ${Theme.LobbyPage.gapSize}px)`,
           gap:Theme.LobbyPage.gapSize/2+'px',
         }]">
-      <BaseScroll :style="[Theme.BoxStyle,
+      <ChatPanel :style="[Theme.BoxStyle,
         {backgroundColor:'lightGray',flex:1}]"/>
-      <BaseScroll :style="[Theme.BoxStyle,
+      <ChatPanel :style="[Theme.BoxStyle,
         {backgroundColor:'lightGray',flex:1}]"/>
       <div
         :style="[
@@ -36,13 +36,15 @@
 
 <script>
 import Store from '../../../models/appModel';
+import ChatPanel from './components/chatPanel.vue'
 
 export default {
   data: function(){
     return {
       Theme : Store.state.theme,
     }
-  }
+  },
+  components:{ChatPanel}
 }
 </script>
 
