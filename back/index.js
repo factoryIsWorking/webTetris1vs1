@@ -4,15 +4,6 @@ const Express = {
     express : require('express'),
     applyTo : function(app){
         const exp = this.express;
-        app.use(require('express-session')({
-            secret: 'special tetris block',
-            name: 'cookie',
-            store : null,
-            proxy: true,
-            resave: true,
-            saveUninitialized: true
-        }));
-        app.use(require('express-ruid')({ setInContext: true }));
         app.use('/',exp.static(global.CONFIG.publicPath));
         app.use(exp.urlencoded({extended:true}));
         app.use(exp.json());
