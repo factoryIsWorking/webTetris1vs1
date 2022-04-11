@@ -42,7 +42,7 @@ export default {
       let res = await messageModel.signUp(this.id, this.pw);
       this.id = "";
       this.pw = "";
-      if (res.success){
+      if (res){
         alert("회원가입 성공 메시지");
         this.$emit("toggle", 1);
       }else{

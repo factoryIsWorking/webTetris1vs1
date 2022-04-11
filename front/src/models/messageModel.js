@@ -1,7 +1,4 @@
-//import appModel from './appModel';
-
-const CONFIG={url:"http://localhost:4001/"}
-//{url : window.location.href};
+const CONFIG={url:"http://localhost:4001/"}//{url : window.location.href};
 {
     let [proto,name,port] = CONFIG.url.split(':');
     CONFIG.assetURL = [proto,name,port].join(':')+"assets/";
@@ -22,7 +19,7 @@ const fetchSet = {
                     headers:{
                         'Content-Type' : 'application/json',
                     },
-                    body: JSON.stringify(body),
+                    body: JSON.stringify(body == undefined ? {} : body),
                 }
             );
     }
@@ -30,15 +27,18 @@ const fetchSet = {
 //this.webSocket = new WebSocket(appModel.CONFIG.wsURL)
 export default {
     webSocket:null,
-    signIn: async function(id,pw){
-        let res = await fetchSet.post('user/signIn',{id,pw});
+    signIn: async function(ID,PW){
+        let res = await fetchSet.post('user/signIn',{ID,PW});
         res = await res.json();
-        return res;
+        return res.success == true ? true : false;
     },
-    signUp: async function(id,pw){
-        let res = await fetchSet.post('user/signUp',{id,pw});
+    signUp: async function(ID,PW){
+        let res = await fetchSet.post('user/signUp',{ID,PW});
         res = await res.json();
-        return res;
+        return res.success == true ? true : false;
+    },
+    getSessionInfo: async function(){
+        fetchSet.post('user/getSessionInfo');
     },
     CONFIG,
 }

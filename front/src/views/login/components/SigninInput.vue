@@ -42,7 +42,7 @@ export default {
       let res = await messageModel.signIn(this.id, this.pw);
       this.id = "";
       this.pw = "";
-      if (res.success){
+      if (res){
         Store.commit('changePage',1);
       }else{
         alert("로그인 실패 메시지");

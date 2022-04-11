@@ -35,6 +35,7 @@
 </template>
 
 <script>
+//import messageModel from '../../../models/messageModel';
 import Store from '../../../models/appModel';
 import ChatPanel from './components/chatPanel.vue'
 
@@ -44,7 +45,10 @@ export default {
       Theme : Store.state.theme,
     }
   },
-  components:{ChatPanel}
+  components:{ChatPanel},
+  // mounted(){
+  //   messageModel.getSessionInfo();
+  // }
 }
 </script>
 

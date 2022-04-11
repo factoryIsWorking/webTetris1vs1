@@ -7,7 +7,7 @@ const RADIOUS = '15px';
 
 const state = {
     pageInfo:{
-        page: 1,//0
+        page: 0,//0
         list: ['login', 'lobby']
     },
     theme: {

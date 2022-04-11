@@ -30,7 +30,7 @@ export default {
     },
     mounted() {
         this.triggerRefresh();
-        for (let type of ['keyup','fullscreenchange','resize','keyup']){
+        for (let type of ['fullscreenchange','resize']){
             addWindowEvent(type, this.triggerRefresh);
         }
     },

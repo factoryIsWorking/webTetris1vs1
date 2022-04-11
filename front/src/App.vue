@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import messageModel from './models/messageModel';
 import LoginView from './views/login/LoginView.vue';
 import LobbyView from './views/lobby/LobbyView.vue';
 import Store from './models/appModel';
@@ -24,8 +25,8 @@ export default {
     LobbyView,
   },
   mounted() {
-    console.log('start')
-    //여기서 서버와 통신해서 state 설정
+    messageModel.getSessionInfo();
+    console.log('start');
   },
 }
 </script>
