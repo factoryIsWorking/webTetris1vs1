@@ -8,7 +8,6 @@ module.exports = (router) => {
         //
         if (ID == "" && PW == ""){
             //Users.addUser(ID, req.session);
-            req.session.userID = ID;
             body = {
                 success: true,
             }
