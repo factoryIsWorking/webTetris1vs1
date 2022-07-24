@@ -1,0 +1,1 @@
+{"version":3,"file":"sessionChecker.js","sourceRoot":"","sources":["../../../src/middleware/sessionChecker.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,GAAG,UAAU,GAAG,EAAE,GAAG,EAAE,IAAI;IACxC,IAAI,CAAC,GAAG,CAAC,OAAO,EAAE;QACjB,OAAO,CAAC,GAAG,CAAC,aAAa,CAAC,CAAC;KAC3B;SAAM;QACN,OAAO,CAAC,GAAG,CAAC,cAAc,CAAC,CAAC;KAC5B;AACF,CAAC,CAAC"}
