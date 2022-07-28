@@ -33,11 +33,11 @@ app.use(cors());
 
 //graphQL
 
-//start app;
-import initAPI from "./API/initAPI";
+//start app
 (async () => {
+	const initAPI = await import(`./API/${config.API_VERSION}/initAPI`);
+	await initAPI.default(app); // apply APIs
 	console.log(`init`);
-	await initAPI(app); // apply APIs
 })()
 	.then(() => app.listen(config.USERS, null))
 	.then(() => {

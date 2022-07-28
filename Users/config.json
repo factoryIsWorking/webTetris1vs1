@@ -1,4 +1,6 @@
 {
 	"SECRET": "LeEhAnSeOnG7",
-	"USERS": 7777
+	"USERS": 7777,
+	"API_VERSION": "v1",
+	"SESSEION_EXPIRE_MIN": 120
 }

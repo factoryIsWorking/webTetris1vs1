@@ -1,0 +1,5 @@
+{
+	"DB_USERNAME": "admin",
+	"DB_PASSWORD": "admin",
+	"DB_URL": "mongodb+srv://admin:<password>@datastorage1.z9jwq.mongodb.net/?retryWrites=true&w=majority"
+}
