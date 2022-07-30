@@ -35,7 +35,7 @@ app.use(cors());
 
 //start app
 (async () => {
-	const initAPI = await import(`./API/${config.API_VERSION}/initAPI`);
+	const initAPI = await import(`./${config.APP_VERSION}/initAPI`);
 	await initAPI.default(app); // apply APIs
 	console.log(`init`);
 })()
