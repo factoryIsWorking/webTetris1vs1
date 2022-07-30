@@ -1,5 +1,6 @@
 import { Application, Request, Response } from "express";
-import authRouter from "./authRouter";
+import authRouter from "./routers/authRouter";
+import userRouter from "./routers/userRouter";
 
 export default (app: Application): void => {
 	//testAPI
@@ -11,6 +12,7 @@ export default (app: Application): void => {
 	});
 	//apply
 	app.use("/auth", authRouter);
+	app.use("/user", userRouter);
 
 	console.log("APIs ready");
 };

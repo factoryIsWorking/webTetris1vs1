@@ -1,7 +1,3 @@
-module.exports = function (req, res, next): void {
-	if (!req.session) {
-		console.log("no session!");
-	} else {
-		console.log("has session!");
-	}
-};
+export default function (req: Request, res: Response, next: Function): void {
+	console.log(req, res, next);
+}
