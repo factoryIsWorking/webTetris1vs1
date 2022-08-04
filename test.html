@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			function sessionCheck() {
+				console.log("clicked");
+				fetch("http://127.0.0.1:7200/", {
+					methods: "GET",
+				})
+					.then((e) => {
+						e.json().then((e) => console.log(e));
+					})
+					.catch((e) => {
+						console.log(e.toString());
+					});
+			}
+		</script>
+	</head>
+	<body>
+		<div>this is test</div>
+		<input type="button" value="session check" onclick="sessionCheck()" />
+	</body>
+</html>

@@ -1,8 +1,8 @@
 {
-	"PORT": {
-		"DB": 4000,
-		"GAMES": 5000,
-		"USERS": 6000,
-		"WEB": 8000
-	}
+	"GAMES": 7100,
+	"USERS": 7200,
+	"WEB": 8000,
+	"DB_USERNAME": "admin",
+	"DB_PASSWORD": "admin",
+	"DB_URL": "mongodb+srv://admin:<password>@datastorage1.z9jwq.mongodb.net/?retryWrites=true&w=majority"
 }
