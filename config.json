@@ -4,5 +4,6 @@
 	"WEB": 8000,
 	"DB_USERNAME": "admin",
 	"DB_PASSWORD": "admin",
-	"DB_URL": "mongodb+srv://admin:<password>@datastorage1.z9jwq.mongodb.net/?retryWrites=true&w=majority"
+	"DB_URL": "mongodb+srv://admin:<password>@datastorage1.z9jwq.mongodb.net/?retryWrites=true&w=majority",
+	"nodeVersion": "v18.4.0"
 }
