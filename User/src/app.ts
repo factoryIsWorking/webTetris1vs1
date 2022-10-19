@@ -1,4 +1,4 @@
-import config from "../config.json";
+import config from "../config";
 Object.assign(config, JSON.parse(process.env.npm_config_envs));
 
 //###express app
@@ -54,7 +54,7 @@ app.use(
 
 //###start app
 (async () => {
-	const initAPI = await import(`./${config.APP_VERSION}/initAPI`);
+	const initAPI = await import(`./initAPI`);
 	await initAPI.default(app); //### apply APIs
 	console.log(`init`);
 })()

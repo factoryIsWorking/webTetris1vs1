@@ -1,5 +1,5 @@
-import config from "../../../config.json";
-import { getSystemTime, MIN_MS } from "../SC";
+import config from "../../config";
+import { getSystemTime, MIN_MS } from "../CommonTool";
 
 //###공통
 

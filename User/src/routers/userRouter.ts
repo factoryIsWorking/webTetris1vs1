@@ -2,7 +2,7 @@ import { v4 as uuidv4, stringfy as uuidStringify } from "uuid";
 import { Router, Request, Response } from "express";
 import { User, UserState } from "../models/Users";
 import config from "../../../config.json";
-import { getSystemTime, MIN_MS } from "../SC";
+import { getSystemTime, MIN_MS } from "../CommonTool";
 
 const userRouter: Router = Router();
 
