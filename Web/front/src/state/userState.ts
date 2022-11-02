@@ -1,5 +1,8 @@
 import type { Action } from "./actions";
-import { LOGIN, PAYLOAD } from "./actions"; // 지원되는 액션 종류
+import { LOGIN, PAYLOAD, ActionList } from "./actions"; // 지원되는 액션 종류
+
+/******config*******/
+const MODULE_NAME = "userState";
 
 //User State Type Definition
 export type UserStateType = {
@@ -17,6 +20,8 @@ DealAction.LOGIN = (
 ): UserStateType => {
 	return { ...state, isLogin: true };
 };
+ActionList.apply(MODULE_NAME, LOGIN);
+
 //Payload - 테스트
 DealAction.PAYLOAD = (
 	state: UserStateType,
@@ -25,7 +30,9 @@ DealAction.PAYLOAD = (
 	console.log(payload);
 	return { ...state };
 };
+ActionList.apply(MODULE_NAME, PAYLOAD);
 
+//최종 유저 Reducer
 export const userReducer = (
 	state = initalUserState,
 	action: Action

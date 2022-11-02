@@ -21,3 +21,14 @@ export const PAYLOAD = (payload: string): ActionPayload => {
 		payload,
 	};
 };
+
+// 관리용 함수
+export const ActionList = {
+	list: Object(),
+	apply(stateName: string, actionType: Function): void {
+		if (this.list[stateName] === undefined) {
+			this.list[stateName] = [];
+		}
+		this.list[stateName].push(actionType);
+	},
+};

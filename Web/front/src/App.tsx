@@ -1,29 +1,19 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
+import { useSelector } from "react-redux";
 import "./App.css";
-import testObj from "./Test";
+import Cover from "./components/Cover";
+import Inner from "./components/Inner";
+//import useLogin from "./hooks/useLogin";
 
 function App() {
-	const [test, setTest] = useState(testObj);
+	//const { __doLogin, isLogin } = useLogin();
+	let isLogin = false;
 	const TestContext = React.createContext("value");
-	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
-	);
+	const PAGE = (() => {
+		if (isLogin) return <Cover></Cover>;
+		else return <Inner></Inner>;
+	})();
+	return <div className="App">{PAGE}</div>;
 }
 
 export default App;

@@ -1,22 +1,17 @@
 import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { updateState } from "../state/action";
+import { LOGIN } from "../state/actions";
 import { RootState } from "../state/store";
 
 export default function useLogin() {
-	const { example } = useSelector((state: RootState) => state.loginReducer);
+	const { isLogin } = useSelector((state: RootState) => state.USER);
 	const dispatch = useDispatch();
-
-	const __updateLoginState = useCallback(
-		(payload: string) => {
-			dispatch(updateState(payload));
-		},
-		[dispatch, updateState]
-	);
-
+	const __doLogin = useCallback(() => {
+		dispatch(LOGIN());
+	}, [dispatch, LOGIN]);
 	return {
-		example,
-		__updateLoginState,
+		isLogin,
+		__doLogin,
 	};
 }
