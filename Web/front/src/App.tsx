@@ -17,3 +17,6 @@ function App() {
 }
 
 export default App;
+
+//dispatch
+//useSelector 공부
